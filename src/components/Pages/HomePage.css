@@ -27,3 +27,26 @@
 .sombra{
     box-shadow: 2px 2px 2px black;
 }
+
+
+/* @media (min-width: 100px) and (max-width: 699px) { 
+  
+    .fondo {
+      overflow-y: auto;
+    }
+    .gridol{
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (min-width: 700px) and (max-width: 990px) { 
+    
+    .fondo {
+      overflow-y: auto;
+    }
+    .gridol{
+      grid-template-columns: 2fr;
+    }
+  }
+   */
+  

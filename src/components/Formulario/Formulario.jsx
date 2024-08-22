@@ -79,7 +79,7 @@ const VolquetesForm = () => {
   const mutation = useMutation({
     mutationFn: submitData,
     onSuccess: () => {
-      console.log("Data registrada correctamente");
+      toast.success("Formulario enviado");
     },
     onError: (error) => {
       console.error("Error de registro:", error);
@@ -96,7 +96,7 @@ const VolquetesForm = () => {
         onSuccess: () => {
           methods.reset();
           setPopupVisible(false);
-          toast.success("Formulario enviado"); 
+          ; 
         },
       });
     } else {
@@ -113,7 +113,7 @@ const VolquetesForm = () => {
       <div className="fondo">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="grid grid-cols-3 auto-rows-auto gap-3 pt-1 p-2 rounded bg-opacity-20 font-sans"
+        className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 auto-rows-auto gap-3 pt-1 p-2 rounded bg-opacity-20 font-sans"
       >
         <div class="space-y-4">
           <Fechas />
