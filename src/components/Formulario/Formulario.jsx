@@ -80,7 +80,6 @@ const VolquetesForm = () => {
     mutationFn: submitData,
     onSuccess: () => {
       console.log("Data registrada correctamente");
-      toast.success("Formulario enviado");
     },
     onError: (error) => {
       console.error("Error de registro:", error);
@@ -93,8 +92,13 @@ const VolquetesForm = () => {
   const submitForm = (DataFinal) => {
     if (Object.keys(errors).length === 0) {
       const finalData = { ...watch(), ...DataFinal };
-      mutation.mutate(finalData);
-      setPopupVisible(false);
+      mutation.mutate(finalData, {
+        onSuccess: () => {
+          methods.reset();
+          setPopupVisible(false);
+          toast.success("Formulario enviado"); 
+        },
+      });
     } else {
       toast.error("Formulario no válido");
     }
