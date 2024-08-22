@@ -5,7 +5,7 @@ import VolquetesForm from "../Formulario/Formulario";
 function HomePage() {
 
   return (
-    <div className="fondo">
+    <div>
       <VolquetesForm /> 
     </div>
   );

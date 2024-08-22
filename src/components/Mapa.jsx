@@ -25,11 +25,11 @@ const Mapa = ({onCoordsChange}) => {
   };
 
   return (
-    <div className="relative border-2 border-solid border-violet-300 box-border z-10">
+    <div className="relative z-10">
       <MapContainer 
         center={[-34.16303686762952, -58.95929374794591]} 
         zoom={15} 
-        style={{ height: "325px", width: "100%" }}
+        style={{ height: "320px", width: "100%"}}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

@@ -21,8 +21,8 @@ const schema = yup.object().shape({
     }),
     LoteCountry: yup.string(), //Tal vez no viven en country
     Coordenadas: yup.object().shape({
-      lat: yup.number(),
-      lng: yup.number(),
+      lat: yup.number().required("Coordenadas requeridas"),
+      lng: yup.number().required("Coordenadas requeridas"),
     }),
   });
 

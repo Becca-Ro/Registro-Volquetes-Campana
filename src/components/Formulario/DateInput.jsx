@@ -6,8 +6,8 @@ import dayjs from "dayjs";
 const DateInput = ({ name, title, mensaje}) => {
   const { control, formState: { errors } } = useFormContext();
   return (
-    <div>
-      <label className="text-white text-lg p-1">{title}</label>
+    <div className="flex flex-row gap-4 ">
+      <label className="text-white texto text-lg pl-2">{title}</label>
       <div className="p-1">
         <Controller
           control={control}
@@ -17,7 +17,7 @@ const DateInput = ({ name, title, mensaje}) => {
             <input
               type="date"
               {...field}
-              className="rounded-sm bg-white bg opacity-60"
+              className="rounded-lg bg-white bg border pl-2 border-gray-300"
             />
           )}
         />

@@ -7,18 +7,18 @@ import { useMutation } from "@tanstack/react-query";
 import { Schema } from "yup";
 import BotonSubmit from "./BotonSubmit";
 import schema from "./Schema";
-import Fechas from "./FECHAS.jsx";
-import DatosChofer from "./DATOSCHOFER";
-import DatosVolquetes from "./DATOSVOLQUETE";
-import DatosSolicitante from "./DATOSSOLICITANTE";
-import DatosDireccion from "./DIRECCION";
+import Fechas from "./Fechas.jsx";
+import DatosChofer from "./DatosChofer";
+import DatosVolquetes from "./DatosVolquetes";
+import DatosSolicitante from "./DatosSolicitante";
+import DatosDireccion from "./Direccion";
 import MapaSeccion from "./MapaSeccion";
 import toast from "react-hot-toast";
 
 <Schema />;
 
 const submitData = async (data) => {
-  const notify = () => toast.error("Credenciales Incorrectas");
+
   const response = await fetch(
     "http://testiis01.campana.gov.ar/Municipalidad.Campana.Api/api/Volquetes/Solicitud",
     {
@@ -70,10 +70,7 @@ const VolquetesForm = () => {
 
   const {
     handleSubmit,
-    setValue,
-    control,
     formState: { errors },
-    register,
     watch,
   } = methods;
 
@@ -104,33 +101,36 @@ const VolquetesForm = () => {
   };
 
   const onSubmit = () => {
-    // abro popUp
     setPopupVisible(true);
   };
 
   return (
     <FormProvider {...methods}>
+      <div className="fondo">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="grid grid-cols-3 auto-rows-auto gap-3 pt-1 p-2 space-y-4 bg-black shadow-md rounded bg-opacity-20 "
+        className="grid grid-cols-3 auto-rows-auto gap-3 pt-1 p-2 rounded bg-opacity-20 font-sans"
       >
-        <div>
+        <div class="space-y-4">
           <Fechas />
         </div>
-        <DatosChofer />
-        <div>
+        <div class="space-y-4">
+          <DatosChofer />
+        </div>
+        <div class="space-y-4">
           <DatosSolicitante />
         </div>
-        <div>
+        <div class="space-y-4">
           <DatosVolquetes />
         </div>
-        <div>
+        <div class="space-y-4">
           <DatosDireccion />
         </div>
-        <div>
+        <div class="space-y-4">
           <MapaSeccion />
         </div>
-        <div className="justify-self-center">
+        <div></div>
+        <div className="justify-self-center space-y-4 p-3">
           <BotonSubmit
             watch={watch}
             submitForm={submitForm}
@@ -138,6 +138,7 @@ const VolquetesForm = () => {
           />
         </div>
       </form>
+      </div>
     </FormProvider>
   );
 };

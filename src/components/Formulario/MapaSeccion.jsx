@@ -18,6 +18,7 @@ const MapaSeccion = () =>{
             />
           )}
         />
+        <div className="flex flex-row">
         {errors.Coordenadas && (
           <>
             {errors.Coordenadas.lat && (
@@ -29,6 +30,7 @@ const MapaSeccion = () =>{
             )}
           </>
         )}
+        </div>
       </div>
     )
 }

@@ -10,7 +10,7 @@ const DatosVolquetes = () => {
   return (
     <div>
       <Titulos titulo="DATOS DEL VOLQUETE" />
-      <div className="grid grid-cols-1 gap-1 p-1">
+      <div className="grid grid-cols-1 gap-1 pl-2">
         <TipoInput
           name="TipoVolqueteId"
           title="Tipo de Volquete"
@@ -23,7 +23,7 @@ const DatosVolquetes = () => {
         />
         <TextInput
           name="DestinoFinal"
-          title="DestinoFinal del Material"
+          title="Destino Final del Material"
           mensaje={errors.DestinoFinal?.message}
         />
       </div>

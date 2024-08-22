@@ -9,7 +9,7 @@ const DatosChofer = () => {
   return (
     <div>
     <Titulos titulo="DATOS DEL CHOFER" />
-    <div className="grid grid-cols-1 gap-1 p-1">
+    <div className="grid grid-cols-1 gap-1 pl-2">
       <TextInput
         name="NombreChofer"
         title="Nombre del Chofer"

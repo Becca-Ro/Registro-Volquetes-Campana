@@ -37,7 +37,7 @@ function SelectorTipo({ value, onChange }) {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between text-lg text-white"
+          className="w-[200px] justify-between text-lg text-white texto shadow-md"
         >
           {selectedFramework ? selectedFramework.value : "Seleccionar tipo"}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />

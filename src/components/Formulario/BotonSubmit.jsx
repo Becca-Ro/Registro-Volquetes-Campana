@@ -17,12 +17,12 @@ const BotonSubmit = ({ watch, submitForm, setPopupVisible }) => {
   const { register, formState: { errors }, control} = useFormContext();
   return (
     <AlertDialog>
-      <AlertDialogTrigger className="bg-white rounded border-violet-950 hover:bg-violet-500 text-xl font-semibold p-2 ">
-        Siguente
+      <AlertDialogTrigger className="rounded-xl hover:bg-white bg-gray-400 text-xl px-6 py-2">
+        SIGUIENTE
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Ingrese Datos de Usuario</AlertDialogTitle>
+          <AlertDialogTitle className="text-2xl">Ingrese Datos de Usuario</AlertDialogTitle>
           <AlertDialogDescription>
             <div className="grid grid-cols-1 gap-1 p-1 w-[460px]">
               <TextInput 

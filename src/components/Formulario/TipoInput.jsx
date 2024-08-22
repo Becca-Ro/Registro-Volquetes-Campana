@@ -9,8 +9,8 @@ const TipoInput = ({ name, title, mensaje, }) => {
     formState: { errors },
   } = useFormContext();
   return (
-    <div className="flex items-center gap-4 p-1">
-      <label className="text-white text-lg">{title}</label>
+    <div className="flex items-center gap-4 ">
+      <label className="text-white texto text-lg">{title}</label>
       <Controller
         control={control}
         name={name}

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Titulos = ({ titulo }) => {
-  return <p className="text-xl font-semibold mb-4 text-white pt-2">{titulo}</p>;
+  return <p className="text-xl font-bold mb-1 texto text-white pt-2 text-center">{titulo}</p>;
 };
 
 export default Titulos;

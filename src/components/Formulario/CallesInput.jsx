@@ -6,8 +6,8 @@ import { Controller, useFormContext } from "react-hook-form";
 const CalleInput =({name, title, mensaje,}) =>{
   const { control, formState: { errors }, setValue } = useFormContext();
     return(
-        <div className="flex items-center gap-4 p-1">
-          <label className="text-white text-lg">{title}</label>
+        <div className="flex items-center gap-4">
+          <label className="text-white texto text-lg">{title}</label>
           <Controller
             control={control}
             name={name}
@@ -19,7 +19,7 @@ const CalleInput =({name, title, mensaje,}) =>{
               />
             )}
           />
-          {errors[name] && <ErrorMessage message={mensaje || "input invalido"} />}
+          {errors[name] && <ErrorMessage message={mensaje} />}
         </div>
     )
 }

@@ -43,7 +43,7 @@ function SelectorCalle({ value, onChange }) {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[265px] justify-between text-lg text-white overflow-hidden"
+          className="w-[265px] justify-between text-lg text-white texto overflow-hidden shadow-md"
         >
           {selectedFramework
             ? selectedFramework.descripcion

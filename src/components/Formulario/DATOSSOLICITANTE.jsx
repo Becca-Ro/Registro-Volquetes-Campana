@@ -4,15 +4,19 @@ import Titulos from "./Titulos";
 import TextInput from "./TextInput";
 
 const DatosSolicitante = () => {
-  const { formState: { errors } } = useFormContext();
+  const {
+    formState: { errors },
+  } = useFormContext();
   return (
     <div>
       <Titulos titulo="DATOS DEL SOLICITANTE" />
-      <TextInput
-        name="NombreSolicitante"
-        title="Nombre y Apellido"
-        mensaje={errors.NombreSolicitante?.message}
-      />
+      <div className="grid grid-cols-1 gap-1 pl-2">
+        <TextInput
+          name="NombreSolicitante"
+          title="Nombre y Apellido"
+          mensaje={errors.NombreSolicitante?.message}
+        />
+      </div>
     </div>
   );
 };

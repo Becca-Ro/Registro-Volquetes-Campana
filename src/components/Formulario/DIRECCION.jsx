@@ -10,8 +10,8 @@ const DatosDireccion = () => {
   return (
     <div>
       <Titulos titulo="DIRECCIÓN" />
-      <div className="grid grid-cols-1 gap-1 p-1">
-        <label className="text-white text-lg p-1">
+      <div className="grid grid-cols-1 gap-1 pl-2">
+        <label className="text-white text-md">
           Si no posee altura especifique sus entrecalles
         </label>
         <CalleInput
