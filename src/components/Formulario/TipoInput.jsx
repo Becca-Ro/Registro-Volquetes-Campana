@@ -18,7 +18,7 @@ const TipoInput = ({ name, title, mensaje, }) => {
           <SelectorTipo value={field.value} onChange={field.onChange} />
         )}
       />
-      {errors[name] && <ErrorMessage message={mensaje || "input invalido"} />}
+      {errors[name] && <ErrorMessage message={mensaje} />}
     </div>
   );
 };

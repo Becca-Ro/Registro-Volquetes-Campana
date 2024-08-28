@@ -47,11 +47,12 @@ const formattedDate = now.format("YYYY-MM-DD");
 
 const VolquetesForm = () => {
   const methods = useForm({
+    mode: 'onChange',
     defaultValues: {
       EmpresaUsuario: "",
       EmpresaCodigo: "",
       DiaEntrega: formattedDate,
-      DiaRetiro: formattedDate,
+      DiaRetiro:formattedDate,
       NombreChofer: "",
       DNIChofer: "",
       PatenteCamion: "",
@@ -60,7 +61,7 @@ const VolquetesForm = () => {
       NumVolquete: "",
       DestinoFinal: "",
       Calle: "",
-      Altura: null,
+      Altura:"",
       EntreCalle: { Item1: null, Item2: null },
       LoteCountry: "",
       Coordenadas: { lat: null, lng: null },
@@ -72,6 +73,7 @@ const VolquetesForm = () => {
     handleSubmit,
     formState: { errors },
     watch,
+    reset
   } = methods;
 
   const [popupVisible, setPopupVisible] = useState(false);
@@ -80,6 +82,8 @@ const VolquetesForm = () => {
     mutationFn: submitData,
     onSuccess: () => {
       toast.success("Formulario enviado");
+      reset();
+      setPopupVisible(false);
     },
     onError: (error) => {
       console.error("Error de registro:", error);
@@ -96,7 +100,7 @@ const VolquetesForm = () => {
         onSuccess: () => {
           methods.reset();
           setPopupVisible(false);
-          ; 
+          toast.success("Formulario enviado"); 
         },
       });
     } else {
@@ -112,8 +116,9 @@ const VolquetesForm = () => {
     <FormProvider {...methods}>
       <div className="fondo">
       <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 auto-rows-auto gap-3 pt-1 p-2 rounded bg-opacity-20 font-sans"
+        onSubmit={handleSubmit(submitForm)}
+
+        className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 lg:overscroll-none xl:overscroll-none xl:grid-cols-3 auto-rows-auto gap-1 pt-1 p-1 rounded bg-opacity-20 font-sans"
       >
         <div class="space-y-4">
           <Fechas />
@@ -139,6 +144,7 @@ const VolquetesForm = () => {
             watch={watch}
             submitForm={submitForm}
             setPopupVisible={setPopupVisible}
+            popupVisible={popupVisible}
           />
         </div>
       </form>

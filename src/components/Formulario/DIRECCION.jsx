@@ -29,7 +29,7 @@ const DatosDireccion = () => {
           title="Entre Calle"
           mensaje={errors.EntreCalle?.Item2.message}
         />
-        <NumInput
+        <TextInput
           name="Altura"
           title="Altura"
           mensaje={errors.Altura?.message}

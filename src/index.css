@@ -74,27 +74,3 @@
 .aria-selected\:text-accent-foreground {
   color: black;
 }
-
-
-
-@media (min-width: 100px) and (max-width: 699px) { 
-  
-  .fondo {
-    overflow-y: auto;
-  }
-  .grid{
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 700px) and (max-width: 990px) { 
-  
-  .fondo {
-    overflow-y: auto;
-    overflow-x: auto;
-  }
-  .grid{
-    grid-template-columns: 2fr;
-  }
-}
-

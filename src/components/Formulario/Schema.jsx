@@ -14,7 +14,7 @@ const schema = yup.object().shape({
     NumVolquete: yup.string().required("Número de volquete requerido"),
     DestinoFinal: yup.string().required("Destino final requerido"),
     Calle: yup.string().required("Direccion requerida"),
-    Altura: yup.number().nullable(), //--Tal vez no tiene altura?
+    Altura: yup.string().nullable(), //--Tal vez no tiene altura?
     EntreCalle: yup.object().shape({
       Item1: yup.string().nullable(),
       Item2: yup.string().nullable(),
