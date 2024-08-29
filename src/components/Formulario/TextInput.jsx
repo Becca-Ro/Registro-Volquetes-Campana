@@ -12,7 +12,7 @@ const TextInput = ({ name, title, mensaje }) => {
       <div>
         <label className="text-white texto text-lg">{title}</label>
       </div>
-      <div>
+      <div className="flex flex-row gap-2">
         <input
           type="text"
           {...register(name, { required: "Campo Requerido" })}

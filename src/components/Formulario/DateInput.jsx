@@ -21,8 +21,9 @@ const DateInput = ({ name, title, mensaje}) => {
             />
           )}
         />
-        {errors[name] && <ErrorMessage message={mensaje || "input invalido"} />}
+        {errors[name] && <ErrorMessage message={mensaje} />}
       </div>
+      <p className="text-green-400 font-medium text-lg">*</p>
     </div>
   );
 };

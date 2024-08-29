@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -8,39 +8,50 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
+  AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import TextInput from "./TextInput";
 import { useFormContext } from "react-hook-form";
+import toast from "react-hot-toast";
 
 const BotonSubmit = ({ watch, submitForm, setPopupVisible, popupVisible }) => {
   const {
-    formState: { errors, isValid },
     trigger,
+    formState: { errors },
   } = useFormContext();
-  
-  useEffect(()=> {trigger();}, [trigger]);
-  
-  const handleButtonClick = async () => {
-    const isFormValid = await trigger();
-    console.log(isFormValid);
-    if (isFormValid) {
-      setPopupVisible(true);
-    } else {
+  const handleClick = async () => {
+    const isValid = await trigger([
+      "DiaEntrega",
+      "DiaRetiro",
+      "NombreChofer",
+      "DNIChofer",
+      "PatenteCamion",
+      "NombreSolicitante",
+      "TipoVolqueteId",
+      "NumVolquete",
+      "DestinoFinal",
+      "Calle",
+      "Coordenadas.lat",
+      "Coordenadas.lng",
+    ]);
+    console.log("Validation result:", isValid);
+
+    if (!isValid) {
+      toast.error("Formulario incompleto. Complete los campos requeridos.");
       setPopupVisible(false);
+    } else {
+      setPopupVisible(true);
     }
   };
 
   return (
     <>
       <button
-        type="button"
-        onClick={handleButtonClick}
+        onClick={handleClick}
         className="rounded-xl hover:bg-white bg-gray-400 text-xl px-6 py-2"
       >
         SIGUIENTE
       </button>
-
-      {popupVisible && (
         <AlertDialog open={popupVisible} onOpenChange={setPopupVisible}>
           <AlertDialogContent>
             <AlertDialogHeader>
@@ -48,7 +59,7 @@ const BotonSubmit = ({ watch, submitForm, setPopupVisible, popupVisible }) => {
                 Ingrese Datos de Usuario
               </AlertDialogTitle>
               <AlertDialogDescription>
-                <div className="grid grid-cols-1 p-1 w-[460px]">
+                <div className="grid grid-cols-1 p-1 w-[480px] text-black text-sm">
                   <TextInput
                     name="EmpresaUsuario"
                     title="Usuario"
@@ -68,21 +79,19 @@ const BotonSubmit = ({ watch, submitForm, setPopupVisible, popupVisible }) => {
               </AlertDialogCancel>
               <AlertDialogAction
                 onClick={() => {
-                  const DataFinal = {
+                  const dataFinal = {
                     EmpresaUsuario: watch("EmpresaUsuario"),
                     EmpresaCodigo: watch("EmpresaCodigo"),
                   };
-                  submitForm(DataFinal);
+                  submitForm(dataFinal);
                 }}
               >
                 Terminar
               </AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
-        </AlertDialog>
-      )}
+         </AlertDialog>
     </>
   );
 };
-
 export default BotonSubmit;

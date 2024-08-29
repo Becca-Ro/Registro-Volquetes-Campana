@@ -1,7 +1,6 @@
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import Titulos from "./Titulos";
-import NumInput from "./NumInput";
 import TextInput from "./TextInput";
 import CalleInput from "./CallesInput";
 
