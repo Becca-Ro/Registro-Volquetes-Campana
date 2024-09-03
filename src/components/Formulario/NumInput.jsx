@@ -8,19 +8,30 @@ const NumInput = ({ name, title, mensaje }) => {
     register,
   } = useFormContext();
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col texto">
       <div>
-        <label className="text-white text-lg texto">{title}</label>
+        <label className="text-white text-lg">{title}</label>
       </div>
-      <div className="flex flex-row gap-2">
+      <div>
         <input
-          type="number"
-          {...register(name, {
-            valueAsNumber: true,
-            validate: (value) => !isNaN(value),
-          })}
+          type="text"
+          onKeyDown={(event) => {   //onKeyPress esta deprecated
+            const permitidas = [
+              'Backspace',
+              'Delete',
+              'ArrowLeft',
+              'ArrowRight',
+            ];
+        
+            if (!/[0-9]/.test(event.key) && !permitidas.includes(event.key)) {
+              event.preventDefault();
+            }
+          }}
+          {...register(name)}
           className="rounded-lg bg-white bg w-[250px] border pl-2 border-gray-300"
           placeholder="Solo números"
+          maxLength={8}
+          
         />
         {errors[name] && <ErrorMessage message={mensaje} />}
       </div>
