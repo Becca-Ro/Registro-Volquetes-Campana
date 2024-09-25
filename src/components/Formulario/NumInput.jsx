@@ -8,9 +8,9 @@ const NumInput = ({ name, title, mensaje }) => {
     register,
   } = useFormContext();
   return (
-    <div className="flex flex-col texto">
+    <div className="flex flex-col ">
       <div>
-        <label className="text-white text-lg">{title}</label>
+        <label className="text-black text-lg">{title}</label>
       </div>
       <div>
         <input

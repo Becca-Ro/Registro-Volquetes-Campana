@@ -10,7 +10,7 @@ const TextInput = ({ name, title, mensaje }) => {
   return (
     <div className="flex flex-col ">
       <div>
-        <label className="text-white texto text-lg">{title}</label>
+        <label className="text-black  text-lg">{title}</label>
       </div>
       <div className="flex flex-row gap-2">
         <input

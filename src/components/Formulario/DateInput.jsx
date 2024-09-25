@@ -7,7 +7,7 @@ const DateInput = ({ name, title, mensaje}) => {
   const { control, formState: { errors } } = useFormContext();
   return (
     <div className="flex flex-row gap-4 ">
-      <label className="text-white texto text-lg pl-2">{title}</label>
+      <label className="text-black  text-lg pl-2">{title}</label>
       <div className="p-1">
         <Controller
           control={control}
@@ -23,7 +23,7 @@ const DateInput = ({ name, title, mensaje}) => {
         />
         {errors[name] && <ErrorMessage message={mensaje} />}
       </div>
-      <p className="text-green-400 font-medium text-lg">*</p>
+      <p className="text-red-400 font-medium text-lg">*</p>
     </div>
   );
 };

@@ -39,7 +39,7 @@ function SelectorCalles({ name, setValue, value }) {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between text-lg text-white texto"
+          className="w-[200px] justify-between text-lg text-black "
         >
           {value
             ? frameworks.find((framework) => framework.value === value)?.label

@@ -10,7 +10,7 @@ const TipoInput = ({ name, title, mensaje, }) => {
   } = useFormContext();
   return (
     <div className="flex items-center gap-4 ">
-      <label className="text-white texto text-lg">{title}</label>
+      <label className="text-black  text-lg">{title}</label>
       <Controller
         control={control}
         name={name}

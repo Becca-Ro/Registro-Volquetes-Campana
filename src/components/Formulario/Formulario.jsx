@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -113,27 +112,27 @@ const VolquetesForm = () => {
 
   return (
     <FormProvider {...methods}>
-      <div className="fondo">
+      <div className="bg-gray-200">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 lg:overscroll-none xl:overscroll-none xl:grid-cols-3 auto-rows-auto gap-1 pt-1 p-1 rounded bg-opacity-20 font-sans"
         >
-          <div class="space-y-4">
+          <div className="space-y-4 p-1 border-violeta border-separate border">
             <Fechas />
           </div>
-          <div class="space-y-4">
+          <div className="space-y-4 p-1 border-violeta border-separate border">
             <DatosChofer />
           </div>
-          <div class="space-y-4">
+          <div className="space-y-4 p-1 border-violeta border-separate border">
             <DatosSolicitante />
           </div>
-          <div class="space-y-4">
+          <div className="space-y-4 p-1 border-violeta border-separate border">
             <DatosVolquetes />
           </div>
-          <div class="space-y-4">
+          <div className="space-y-4 p-1 border-violeta border-separate border">
             <DatosDireccion />
           </div>
-          <div class="space-y-4">
+          <div className="space-y-4 p-1 border-violeta border-separate border">
             <MapaSeccion />
           </div>
           <div></div>

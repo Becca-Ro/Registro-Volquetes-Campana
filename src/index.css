@@ -63,9 +63,6 @@
   * {
     @apply border-border;
   }
-  body {
-    background-color: #793e90;
-  }
 }
 .aria-selected\:bg-accent {
   background-color: white;
